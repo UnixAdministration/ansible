@@ -1,0 +1,15 @@
+---
+- hosts: localhost
+  become: true
+  tasks:
+  - name: Add the user '_ansible' with a specific uid and a primary group of 'admin'
+    user:
+      name: "_ansible"
+      comment: "Ansible Administrator"
+      state: present
+      shell: /bin/bash
+      uid: 1001
+      generate_ssh_key: yes
+      ssh_key_bits: 2048
+      ssh_key_file: .ssh/id_rsa
+      password: "$6$mysecretsalt$GcajIATSXc4CUJ.uOMrH.oB7A7dch4KSuaNfL12kfmhFZz7hH9gcttplfRfmk4rQ.sQnZieSBxqi6xPDFBGRC0"
