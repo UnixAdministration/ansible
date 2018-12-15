@@ -1,4 +1,5 @@
 ---
+- hosts: all
   become: true
   tasks:
   - name: Add the user '_ansible' with a specific uid and a primary group of 'admin'
